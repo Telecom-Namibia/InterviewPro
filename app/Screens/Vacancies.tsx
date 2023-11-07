@@ -1,11 +1,10 @@
 import { View, Text , StyleSheet} from 'react-native'
 import React from 'react'
+import VacancyHeader from '../components/Vacancies/VacancyHeader'
 
 const Vacancies = () => {
   return (
-    <View style={styles.Container}>
-      <Text>Vacancies</Text>
-    </View>
+    <VacancyHeader />
   )
 }
 const styles = StyleSheet.create({

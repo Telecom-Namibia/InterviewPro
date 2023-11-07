@@ -2,6 +2,7 @@ import { View, ScrollView, TouchableOpacity, Text, StyleSheet } from 'react-nati
 import React, { Component } from 'react'
 import Header from '../components/Home/Header';
 import Cards from '../components/Home/Cards';
+import Calendar from '../components/Home/Calendar';
 
 
 
@@ -12,6 +13,7 @@ export default class Dashboard extends Component {
       <View>
         <Header/>
         <Cards />
+        <Calendar />
        
       </View>
     )

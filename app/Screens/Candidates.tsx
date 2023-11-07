@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Header from '../components/Candidates/Header'
 
 const Candidates = () => {
   return (
-    <View style={styles.Container}> 
-      <Text>Candidates</Text>
-    </View>
+    <Header />
   )
 }
 

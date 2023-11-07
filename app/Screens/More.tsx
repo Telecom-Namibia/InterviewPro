@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import SettingsHeader from '../components/Settings/SettingsHeader'
 
 const More = () => {
   return (
-    <View style={styles.Container}>
-      <Text>More</Text>
-    </View>
+    <SettingsHeader />
   )
 }
 
