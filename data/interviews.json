@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "application_id": 101,
+        "interview_date": "2023-10-15",
+        "interview_location": "123 Main Street, City",
+        "notes": "First round interview with candidate A."
+    },
+    {
+        "id": 2,
+        "application_id": 102,
+        "interview_date": "2023-10-18",
+        "interview_location": "456 Elm Avenue, Town",
+        "notes": "Video interview with candidate B."
+    },
+    {
+        "id": 3,
+        "application_id": 103,
+        "interview_date": "2023-10-20",
+        "interview_location": "789 Oak Lane, Village",
+        "notes": "In-person interview with candidate C."
+    },
+    {
+        "id": 4,
+        "application_id": 104,
+        "interview_date": "2023-10-22",
+        "interview_location": "101 Park Avenue, City",
+        "notes": "Technical interview with candidate D."
+    },
+    {
+        "id": 5,
+        "application_id": 105,
+        "interview_date": "2023-10-25",
+        "interview_location": "202 Lake Road, Town",
+        "notes": "Phone interview with candidate E."
+    },
+    {
+        "id": 6,
+        "application_id": 106,
+        "interview_date": "2023-10-28",
+        "interview_location": "303 Forest Lane, Village",
+        "notes": "Final round interview with candidate F."
+    },
+    {
+        "id": 7,
+        "application_id": 107,
+        "interview_date": "2023-11-02",
+        "interview_location": "404 Grove Street, City",
+        "notes": "Behavioral interview with candidate G."
+    },
+    {
+        "id": 8,
+        "application_id": 108,
+        "interview_date": "2023-11-05",
+        "interview_location": "505 Pine Avenue, Town",
+        "notes": "Panel interview with candidate H."
+    },
+    {
+        "id": 9,
+        "application_id": 109,
+        "interview_date": "2023-11-08",
+        "interview_location": "606 Birch Lane, Village",
+        "notes": "Technical assessment and interview with candidate I."
+    },
+    {
+        "id": 10,
+        "application_id": 110,
+        "interview_date": "2023-11-11",
+        "interview_location": "707 Cedar Road, City",
+        "notes": "In-person interview with candidate J."
+    },
+    {
+        "id": 11,
+        "application_id": 111,
+        "interview_date": "2023-11-14",
+        "interview_location": "808 Maple Street, Town",
+        "notes": "HR interview with candidate K."
+    },
+    {
+        "id": 12,
+        "application_id": 112,
+        "interview_date": "2023-11-17",
+        "interview_location": "909 Spruce Avenue, Village",
+        "notes": "Technical assessment and interview with candidate L."
+    },
+    {
+        "id": 13,
+        "application_id": 113,
+        "interview_date": "2023-11-20",
+        "interview_location": "1010 Oak Lane, City",
+        "notes": "Final round interview with candidate M."
+    }
+]

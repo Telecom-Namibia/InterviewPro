@@ -10,7 +10,7 @@ export default function Login() {
 
     const login =async () => {
         const result = await onLogin!(email,password);
-        console.log(result);
+        alert(result);
     };
 
     
@@ -48,6 +48,7 @@ export default function Login() {
             placeholderTextColor= '#fff'
             style={styles.input}
             value={password}
+            secureTextEntry={true}
             onChangeText={(value) => setPassword(value)}
             />
         </SafeAreaView>
