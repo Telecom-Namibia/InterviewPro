@@ -1,82 +1,52 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Platform, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import VacancyHeader from '../components/Vacancies/VacancyHeader';
-import DateTimePicker from '@react-native-community/datetimepicker';
 
 interface VacancyData {
   vacancy_Id: number;
   vacancy_name: string;
   vacancy_description: string;
-  vacancy_closing_date: Date;
+  vacancy_closing_date: string;
 }
 
 const initialVacanciesData: VacancyData[] = [
   {
     vacancy_Id: 1,
-    vacancy_name: 'Graduates Development',
-    vacancy_description: 'We are looking Recent University Graduates join our team.',
-    vacancy_closing_date: new Date('2022-01-31'),
+    vacancy_name: "Software Engineer",
+    vacancy_description: "We are looking for a skilled software engineer to join our team.",
+    vacancy_closing_date: "2022-01-31"
   },
-  // ... (remaining initial data)
+  {
+    vacancy_Id: 2,
+    vacancy_name: "Data Analyst",
+    vacancy_description: "We are seeking a data analyst to help us analyze and interpret complex data sets.",
+    vacancy_closing_date: "2022-02-28"
+  },
+  {
+    vacancy_Id: 3,
+    vacancy_name: "Product Manager",
+    vacancy_description: "We are looking for an experienced product manager to lead our product development team.",
+    vacancy_closing_date: "2022-03-31"
+  }
 ];
 
 const Vacancies: React.FC = () => {
   const [vacanciesData, setVacanciesData] = useState<VacancyData[]>(initialVacanciesData);
   const [newVacancy, setNewVacancy] = useState<VacancyData>({
     vacancy_Id: 0,
-    vacancy_name: '',
-    vacancy_description: '',
-    vacancy_closing_date: new Date(),
+    vacancy_name: "",
+    vacancy_description: "",
+    vacancy_closing_date: ""
   });
-  const [showDatePicker, setShowDatePicker] = useState(false);
-  const [editingVacancyId, setEditingVacancyId] = useState<number | null>(null);
 
   const handleAddVacancy = () => {
-    if (newVacancy.vacancy_name && newVacancy.vacancy_description && newVacancy.vacancy_closing_date) {
-      setVacanciesData([...vacanciesData, { ...newVacancy, vacancy_Id: vacanciesData.length + 1 }]);
-      setNewVacancy({
-        vacancy_Id: 0,
-        vacancy_name: '',
-        vacancy_description: '',
-        vacancy_closing_date: new Date(),
-      });
-    }
-  };
-
-  const handleEditVacancy = (vacancyId: number) => {
-    const editedVacanciesData = vacanciesData.map((vacancy) => {
-      if (vacancy.vacancy_Id === vacancyId) {
-        return { ...newVacancy, vacancy_Id: vacancyId };
-      } else {
-        return vacancy;
-      }
-    });
-    setVacanciesData(editedVacanciesData);
-    setEditingVacancyId(null);
+    setVacanciesData([...vacanciesData, { ...newVacancy, vacancy_Id: vacanciesData.length + 1 }]);
     setNewVacancy({
       vacancy_Id: 0,
-      vacancy_name: '',
-      vacancy_description: '',
-      vacancy_closing_date: new Date(),
+      vacancy_name: "",
+      vacancy_description: "",
+      vacancy_closing_date: ""
     });
-  };
-
-  const handleDateChange = (event: any, selectedDate: Date | undefined) => {
-    const currentDate = selectedDate || newVacancy.vacancy_closing_date;
-    
-    // Check if the selected date is in the past
-    if (currentDate.setHours(0,0,0,0) < new Date().setHours(0,0,0,0)) {
-      Alert.alert('The closing date cannot be in the past.');
-      return;
-    }
-
-    setShowDatePicker(Platform.OS === 'android');
-    setNewVacancy({ ...newVacancy, vacancy_closing_date: currentDate });
-  };
-
-  const handleEditButtonPress = (vacancy: VacancyData) => {
-    setEditingVacancyId(vacancy.vacancy_Id);
-    setNewVacancy(vacancy);
   };
 
   return (
@@ -99,39 +69,22 @@ const Vacancies: React.FC = () => {
           value={newVacancy.vacancy_description}
           onChangeText={(text) => setNewVacancy({ ...newVacancy, vacancy_description: text })}
         />
-        <TouchableOpacity style={styles.input} onPress={() => setShowDatePicker(true)}>
-          <Text style={styles.datePickerLabel}>Closing Date:</Text>
-          <Text>{newVacancy.vacancy_closing_date.toISOString().split('T')[0]}</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Closing Date"
+          value={newVacancy.vacancy_closing_date}
+          onChangeText={(text) => setNewVacancy({ ...newVacancy, vacancy_closing_date: text })}
+        />
+        <TouchableOpacity style={styles.addButton} onPress={handleAddVacancy}>
+          <Text style={styles.addButtonText}>Add Vacancy</Text>
         </TouchableOpacity>
-        {showDatePicker && (
-          <DateTimePicker
-            value={newVacancy.vacancy_closing_date}
-            mode="date"
-            display="default"
-            onChange={handleDateChange}
-          />
-        )}
-        {editingVacancyId ? (
-          <TouchableOpacity style={styles.addButton} onPress={() => handleEditVacancy(editingVacancyId)}>
-            <Text style={styles.addButtonText}>Save Changes</Text>
-          </TouchableOpacity>
-        ) : (
-          <TouchableOpacity style={styles.addButton} onPress={handleAddVacancy}>
-            <Text style={styles.addButtonText}>Add Vacancy</Text>
-          </TouchableOpacity>
-        )}
       </View>
       {vacanciesData.map((vacancy) => (
         <View key={vacancy.vacancy_Id} style={styles.vacancyContainer}>
-          <Text style={styles.vacancyId}>Vacancy : {vacancy.vacancy_Id}</Text>
+          <Text style={styles.vacancyId}>ID: {vacancy.vacancy_Id}</Text>
           <Text style={styles.vacancyName}>{vacancy.vacancy_name}</Text>
           <Text style={styles.vacancyDescription}>{vacancy.vacancy_description}</Text>
-          <Text style={styles.vacancyClosingDate}>
-            Closing Date: {vacancy.vacancy_closing_date.toISOString().split('T')[0]}
-          </Text>
-          <TouchableOpacity style={styles.editButton} onPress={() => handleEditButtonPress(vacancy)}>
-            <Text style={styles.editButtonText}>Edit</Text>
-          </TouchableOpacity>
+          <Text style={styles.vacancyClosingDate}>Closing Date: {vacancy.vacancy_closing_date}</Text>
         </View>
       ))}
     </ScrollView>
@@ -148,10 +101,10 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   headerContainer: {
-    marginBottom: 10,
+    marginBottom: 20,
   },
   formContainer: {
-    marginBottom: 10,
+    marginBottom: 20,
   },
   input: {
     borderWidth: 1,
@@ -159,9 +112,6 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     borderRadius: 5,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
   },
   addButton: {
     backgroundColor: 'blue',
@@ -175,17 +125,10 @@ const styles = StyleSheet.create({
   },
   vacancyContainer: {
     marginBottom: 20,
-    backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#ccc',
     padding: 15,
+    borderRadius: 5,
   },
   vacancyId: {
     fontSize: 18,
@@ -204,21 +147,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 5,
     color: '#888',
-  },
-  datePickerLabel: {
-    marginRight: 10,
-    fontSize: 16,
-  },
-  editButton: {
-    backgroundColor: 'gray',
-    padding: 10,
-    alignItems: 'center',
-    borderRadius: 5,
-    marginTop: 10,
-  },
-  editButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
   },
 });
 
