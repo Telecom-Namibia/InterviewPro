@@ -2,23 +2,9 @@ import { AuthProvider, useAuth } from './app/contexts/AuthContext';
 import {NavigationContainer} from '@react-navigation/native';
 import TabNavigation from './app/navigations/TabNavigation';
 import { StatusBar } from 'expo-status-bar';
-<<<<<<< HEAD
-import type {StatusBarStyle} from 'react-native';
-import VacancyTabNavigator from './app/navigations/CandidatesTabNavigator';
 
-
-=======
 import React from 'react'
-<<<<<<< HEAD
->>>>>>> origin/main
-=======
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
-const Stack = createNativeStackNavigator();
-
-
->>>>>>> origin/main
 export default function App() {
 return(
 
