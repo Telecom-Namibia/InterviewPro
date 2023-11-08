@@ -80,10 +80,12 @@ const Vacancies: React.FC = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.headerContainer}>
+    <View>
+      <View>
         <VacancyHeader />
       </View>
+<ScrollView contentContainerStyle={styles.container}>
+      
       <View style={styles.formContainer}>
         <TextInput
           style={styles.input}
@@ -133,6 +135,8 @@ const Vacancies: React.FC = () => {
         </View>
       ))}
     </ScrollView>
+    </View>
+    
   );
 };
 
