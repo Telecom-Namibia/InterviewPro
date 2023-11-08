@@ -34,17 +34,20 @@ export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancie
     // Add your logic here
   };
   LogBox.ignoreLogs(['Sending `onAnimatedValueUpdate` with no listeners registered.']);
-  const getRandomColor = () => {
-    const letters = '01234ABCDE';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 10) + 6]; // only use the last 6 letters (darker colors)
-    }
-    return color;
-  };
+  const colorArray = ['#FF5733', '#C70039', '#900C3F', '#581845', '#FFC300', '#DAF7A6', '#FF5733', '#C70039', '#900C3F', '#581845'];
+
+const getRandomColor = () => {
+  const randomIndex = Math.floor(Math.random() * colorArray.length);
+  return colorArray[randomIndex];
+};
 
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+    screenOptions={{
+      
+      tabBarIndicatorStyle: { backgroundColor: '#1F2F47' },
+    }}
+    >
         {vacancies.map(vacancy => (
           <Tab.Screen
             name={vacancy.title}
@@ -68,7 +71,7 @@ export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancie
                         </View>
                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
                           <Text style={{ fontSize: 16, fontWeight: '600' }}>{item.name}</Text>
-                          <Text style={{ fontSize: 12, backgroundColor: getGradeColor(item.grade), color: 'white', padding:10, justifyContent:'center',fontWeight:'bold', height:'auto' }}>{item.grade}%</Text>
+                          <Text style={{ fontSize: 12, color: getGradeColor(item.grade), padding:10, justifyContent:'center',fontWeight:'bold'}}>{item.grade}%</Text>
                           </View>
                       </View>
                     </TouchableOpacity>
