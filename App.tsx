@@ -4,6 +4,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import TabNavigation from './app/navigations/TabNavigation';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
+import type {StatusBarStyle} from 'react-native';
+
 
 export default function App() {
 return(
@@ -22,6 +24,7 @@ export const Layout = () => {
 
     return (
         <NavigationContainer >
+            <StatusBar style='light' />
 
             {/* {authState?.authenticated ? ( */}
                 <TabNavigation/>
