@@ -13,8 +13,8 @@ interface VacancyData {
 const initialVacanciesData: VacancyData[] = [
   {
     vacancy_Id: 1,
-    vacancy_name: 'Software Engineer',
-    vacancy_description: 'We are looking for a skilled software engineer to join our team.',
+    vacancy_name: 'Graduates Development',
+    vacancy_description: 'We are looking Recent University Graduates join our team.',
     vacancy_closing_date: new Date('2022-01-31'),
   },
   // ... (remaining initial data)
@@ -137,10 +137,10 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   headerContainer: {
-    marginBottom: 20,
+    marginBottom: 10,
   },
   formContainer: {
-    marginBottom: 20,
+    marginBottom: 10,
   },
   input: {
     borderWidth: 1,
@@ -164,10 +164,17 @@ const styles = StyleSheet.create({
   },
   vacancyContainer: {
     marginBottom: 20,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 15,
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
     borderRadius: 5,
+    padding: 15,
   },
   vacancyId: {
     fontSize: 18,
