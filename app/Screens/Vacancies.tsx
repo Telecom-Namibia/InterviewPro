@@ -15,7 +15,7 @@ const initialVacanciesData: VacancyData[] = [
     vacancy_Id: 1,
     vacancy_name: 'Graduates Development',
     vacancy_description: 'We are looking Recent University Graduates join our team.',
-    vacancy_closing_date: new Date('2022-01-31'),
+    vacancy_closing_date: new Date('2023-01-31'),
   },
   // ... (remaining initial data)
 ];
