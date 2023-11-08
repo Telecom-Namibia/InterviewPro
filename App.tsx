@@ -2,7 +2,6 @@ import { AuthProvider, useAuth } from './app/contexts/AuthContext';
 import {NavigationContainer} from '@react-navigation/native';
 import TabNavigation from './app/navigations/TabNavigation';
 import { StatusBar } from 'expo-status-bar';
-import type {StatusBarStyle} from 'react-native';
 
 
 import React from 'react'
