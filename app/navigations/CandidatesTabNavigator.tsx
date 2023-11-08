@@ -22,7 +22,7 @@ interface CandidatesTabsProps {
 
 const Tab = createMaterialTopTabNavigator();
 
-export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancies, candidates, navigation }) => {
+export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancies, candidates}) => {
   const getGradeColor = (grade: number) => {
     if (grade > 80) return 'green';
     if (grade > 50) return 'orange';
