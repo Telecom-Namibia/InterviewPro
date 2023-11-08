@@ -1,7 +1,7 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { View, Text , FlatList, TouchableOpacity} from "react-native";
-
+import { AntDesign } from '@expo/vector-icons';
 import { LogBox } from 'react-native';
 
 interface Vacancy {
@@ -34,7 +34,14 @@ export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancie
     // Add your logic here
   };
   LogBox.ignoreLogs(['Sending `onAnimatedValueUpdate` with no listeners registered.']);
-  
+  const getRandomColor = () => {
+    const letters = '01234ABCDE';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 10) + 6]; // only use the last 6 letters (darker colors)
+    }
+    return color;
+  };
 
   return (
     <Tab.Navigator>
@@ -51,16 +58,22 @@ export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancie
               <FlatList
                 data={candidates[vacancy.id]}
                 keyExtractor={(item: Candidate) => item.id.toString()}
-                renderItem={({ item }: { item: Candidate }) => (
-                  <TouchableOpacity onPress={() => handlePress(item)}>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#fff', margin: 10, padding: 20, borderRadius: 5 }}>
-                      <Text style={{ color: 'black', fontSize: 14, fontWeight: '600' }}>{item.name}</Text>
-                      <View style={{ backgroundColor: getGradeColor(item.grade), padding: 5, borderRadius: 5 }}>
-                        <Text style={{ color: '#fff', fontSize: 12, fontWeight: 'bold' }}>{item.grade}%</Text>
+                renderItem={({ item }: { item: Candidate }) => {
+                  const backgroundColor = getRandomColor();
+                  return (
+                    <TouchableOpacity onPress={() => handlePress(item)}>
+                      <View style={{ flexDirection: 'row',alignItems:'center', justifyContent: 'space-between', backgroundColor: '#fff', margin: 10, padding: 20, borderRadius: 5,  shadowColor: 'rgba(0, 0, 0, 0.1)', shadowOffset: { width: 0, height: 2 },shadowRadius: 6,elevation: 5,shadowOpacity: 1, }}>
+                        <View style={{ backgroundColor, borderRadius: 50, width: 40, height: 40, alignItems: 'center', justifyContent: 'center', marginRight: 10 }}>
+                          <Text style={{ color: '#fff', fontSize: 20 }}>{item.name.charAt(0).toUpperCase()}</Text>
+                        </View>
+                        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+                          <Text style={{ fontSize: 16, fontWeight: '600' }}>{item.name}</Text>
+                          <Text style={{ fontSize: 12, backgroundColor: getGradeColor(item.grade), color: 'white', padding:10, justifyContent:'center',fontWeight:'bold', height:'auto' }}>{item.grade}%</Text>
+                          </View>
                       </View>
-                    </View>
-                  </TouchableOpacity>
-                )}
+                    </TouchableOpacity>
+                  );
+                }}
               />
             )}
           />
@@ -68,3 +81,4 @@ export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancie
       </Tab.Navigator>
   );
 };
+

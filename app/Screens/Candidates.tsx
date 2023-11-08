@@ -20,7 +20,7 @@ const Candidates = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      <Header />
+      <Header />      
       <CandidatesTabNavigator vacancies={vacancies} candidates={candidates} />
     </View>
   );
