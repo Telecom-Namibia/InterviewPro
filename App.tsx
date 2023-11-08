@@ -9,6 +9,15 @@ import VacancyTabNavigator from './app/navigations/CandidatesTabNavigator';
 
 =======
 import React from 'react'
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+const Stack = createNativeStackNavigator();
+
+
 >>>>>>> origin/main
 export default function App() {
 return(
@@ -30,6 +39,7 @@ export const Layout = () => {
 
             {/* {authState?.authenticated ? ( */}
                 <TabNavigation/>
+                
 
 
             {/* ) : (

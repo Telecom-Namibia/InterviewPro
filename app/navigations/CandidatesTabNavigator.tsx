@@ -22,7 +22,7 @@ interface CandidatesTabsProps {
 
 const Tab = createMaterialTopTabNavigator();
 
-export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancies, candidates }) => {
+export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancies, candidates, navigation }) => {
   const getGradeColor = (grade: number) => {
     if (grade > 80) return 'green';
     if (grade > 50) return 'orange';
@@ -30,8 +30,10 @@ export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancie
   };
   const handlePress = (candidate: Candidate) => {
     console.log(`Candidate ${candidate.name} was pressed`);
+
     // Add your logic here
   };
+  LogBox.ignoreLogs(['Sending `onAnimatedValueUpdate` with no listeners registered.']);
   
 
   return (

@@ -23,7 +23,8 @@ const Candidates = () => {
       <Header />
       <CandidatesTabNavigator vacancies={vacancies} candidates={candidates} />
     </View>
-  )
+  );
+  
 }
 
 export default Candidates
