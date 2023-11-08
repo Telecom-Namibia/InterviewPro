@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Platform } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Platform, Alert } from 'react-native';
 import VacancyHeader from '../components/Vacancies/VacancyHeader';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
@@ -63,6 +63,13 @@ const Vacancies: React.FC = () => {
 
   const handleDateChange = (event: any, selectedDate: Date | undefined) => {
     const currentDate = selectedDate || newVacancy.vacancy_closing_date;
+    
+    // Check if the selected date is in the past
+    if (currentDate.setHours(0,0,0,0) < new Date().setHours(0,0,0,0)) {
+      Alert.alert('The closing date cannot be in the past.');
+      return;
+    }
+
     setShowDatePicker(Platform.OS === 'android');
     setNewVacancy({ ...newVacancy, vacancy_closing_date: currentDate });
   };
