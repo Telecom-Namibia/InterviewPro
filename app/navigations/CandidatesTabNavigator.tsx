@@ -1,28 +1,46 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { View, Text , FlatList, TouchableOpacity} from "react-native";
-import { AntDesign } from '@expo/vector-icons';
 import { LogBox } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 interface Vacancy {
   id: string;
   title: string;
 }
 
+interface Project {
+  name: string;
+  description: string;
+}
+
 interface Candidate {
   id: number;
   name: string;
-  grade: number; // Add this line
+  grade: number;
+  email: string;
+  phone: string;
+  address: string;
+  skills: string[];
+  experience: string;
+  education: string;
+  languages: string[];
+  certifications: string[];
+  projects: Project[];
 }
-
 interface CandidatesTabsProps {
   vacancies: Vacancy[];
   candidates: Record<string, Candidate[]>;
+
 }
 
 const Tab = createMaterialTopTabNavigator();
 
 export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancies, candidates}) => {
+  
+  const navigation = useNavigation();
+
   const getGradeColor = (grade: number) => {
     if (grade > 80) return 'green';
     if (grade > 50) return 'orange';
@@ -30,6 +48,8 @@ export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancie
   };
   const handlePress = (candidate: Candidate) => {
     console.log(`Candidate ${candidate.name} was pressed`);
+    navigation.navigate('CandidateProfile', { candidate });
+
 
     // Add your logic here
   };

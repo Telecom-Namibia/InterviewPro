@@ -5,7 +5,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 const Header = () => {
   
   return (
-    <View style={{ justifyContent: 'center', paddingTop: 54, paddingBottom: 27, paddingHorizontal: 20, backgroundColor: '#1F2F47', borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }}>
+    <View style={{ justifyContent: 'center', paddingTop: 54, paddingBottom: 27, paddingHorizontal: 20, backgroundColor: '#1F2F47', borderBottomRightRadius: 0, borderBottomLeftRadius: 0}}>
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
         <Text style={{ color: '#fff', fontSize: 21, fontWeight: '600' }}>Shortlisted Candidates</Text>
         <TouchableOpacity >

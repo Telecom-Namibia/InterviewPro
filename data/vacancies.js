@@ -10,51 +10,41 @@ export const vacancies = [
 
 export const candidates = {
   1: [
-    { id: 101, name: "John Doe", grade: 90 },
-    { id: 102, name: "Jane Smith", grade: 85 },
-    { id: 103, name: "Charlie Brown", grade: 88 },
-    { id: 501, name: "Jack Brown", grade: 93 },
-    { id: 502, name: "Karen Smith", grade: 94 },
-    { id: 503, name: "Linda Johnson", grade: 88 },
-    { id: 504, name: "Michael Davis", grade: 90 },
-    { id: 505, name: "Nora Wilson", grade: 91 }, // Added
+    {
+      id: 101,
+      name: "John Doe",
+      grade: 90,
+      email: "john.doe@email.com",
+      phone: "+1234567890",
+      address: "123 Main Street, City",
+      skills: ["JavaScript", "React", "Node.js"],
+      experience: "5 years",
+      education: "Bachelor's in Computer Science",
+      languages: ["English", "Spanish"],
+      certifications: ["React Certification", "Node.js Certification"],
+      projects: [
+        { name: "Project A", description: "Web application using React" },
+        { name: "Project B", description: "Node.js backend for data processing" },
+      ],
+    },
+    {
+      id: 102,
+      name: "Jane Smith",
+      grade: 85,
+      email: "jane.smith@email.com",
+      phone: "+9876543210",
+      address: "456 Elm Avenue, Town",
+      skills: ["Java", "Spring Boot", "Angular"],
+      experience: "4 years",
+      education: "Master's in Software Engineering",
+      languages: ["English", "French"],
+      certifications: ["Java Certification", "AWS Certification"],
+      projects: [
+        { name: "Project X", description: "Enterprise application with Java and Spring" },
+        { name: "Project Y", description: "Single-page application using Angular" },
+      ],
+    },
+    // Add more candidates here
   ],
-  2: [
-    { id: 201, name: "Alice Johnson", grade: 95 },
-    { id: 202, name: "Bob Brown", grade: 80 },
-    { id: 203, name: "David Smith", grade: 92 },
-    { id: 101, name: "John Doe", grade: 90 },
-    { id: 102, name: "Jane Smith", grade: 85 },
-    { id: 103, name: "Charlie Brown", grade: 88 },
-    { id: 104, name: "Diana Johnson", grade: 92 },
-    { id: 105, name: "Evan Davis", grade: 86 },
-    { id: 106, name: "Grace Wilson", grade: 78 },
-    { id: 107, name: "Henry White", grade: 79 },
-    { id: 108, name: "Isabella Brown", grade: 75 },
-    { id: 109, name: "Jack Smith", grade: 70 },
-    { id: 110, name: "Katherine Johnson", grade: 68 }, // Added
-  ],
-  3: [
-    { id: 301, name: "Ella Davis", grade: 90 },
-    { id: 302, name: "Frank Wilson", grade: 85 },
-    { id: 303, name: "George Johnson", grade: 89 }, // Added
-  ],
-  4: [
-    { id: 401, name: "Helen Davis", grade: 91 }, // Added
-    { id: 402, name: "Irene Wilson", grade: 87 }, // Added
-  ],
-  5: [
-    { id: 501, name: "Jack Brown", grade: 93 }, // Added
-    { id: 502, name: "Karen Smith", grade: 94 }, 
-    { id: 401, name: "Helen Davis", grade: 91 },
-    { id: 402, name: "Irene Wilson", grade: 87 },
-    { id: 403, name: "Jacob Smith", grade: 92 },
-    { id: 404, name: "Katherine Johnson", grade: 89 },
-    { id: 405, name: "Liam Brown", grade: 95 },
-    { id: 406, name: "Mia Davis", grade: 78 },
-    { id: 407, name: "Noah Smith", grade: 79 },
-    { id: 408, name: "Olivia Wilson", grade: 74 },
-    { id: 409, name: "Peter Brown", grade: 70 },
-    { id: 410, name: "Quinn Johnson", grade: 68 },// Added
-  ],
+  // Repeat the structure for other vacancies
 };
