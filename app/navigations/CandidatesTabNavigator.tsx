@@ -85,6 +85,8 @@ const getRandomColor = () => {
               <FlatList
                 data={candidates[vacancy.id]}
                 keyExtractor={(item: Candidate) => item.id.toString()}
+                showsVerticalScrollIndicator={false} // Hide vertical scrollbar
+      showsHorizontalScrollIndicator={false} 
                 renderItem={({ item }: { item: Candidate }) => {
                   const backgroundColor = getRandomColor();
                   return (
