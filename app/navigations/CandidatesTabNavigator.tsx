@@ -1,6 +1,6 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { View, Text , FlatList, TouchableOpacity} from "react-native";
+import { View, Text , FlatList, TouchableOpacity, StyleSheet} from "react-native";
 import { LogBox } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -33,6 +33,12 @@ interface CandidatesTabsProps {
   vacancies: Vacancy[];
   candidates: Record<string, Candidate[]>;
 
+
+}
+
+
+interface CandidatesTabNavigatorProps {
+  candidates: Candidate[];
 }
 
 const Tab = createMaterialTopTabNavigator();
@@ -47,11 +53,7 @@ export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancie
     return 'red';
   };
   const handlePress = (candidate: Candidate) => {
-    console.log(`Candidate ${candidate.name} was pressed`);
     navigation.navigate('CandidateProfile', { candidate });
-
-
-    // Add your logic here
   };
   LogBox.ignoreLogs(['Sending `onAnimatedValueUpdate` with no listeners registered.']);
   const colorArray = ['#FF5733', '#C70039', '#900C3F', '#581845', '#FFC300', '#DAF7A6', '#FF5733', '#C70039', '#900C3F', '#581845'];
@@ -60,6 +62,7 @@ const getRandomColor = () => {
   const randomIndex = Math.floor(Math.random() * colorArray.length);
   return colorArray[randomIndex];
 };
+
 
   return (
     <Tab.Navigator
@@ -78,6 +81,7 @@ const getRandomColor = () => {
               ),
             }}
             children={() => (
+              
               <FlatList
                 data={candidates[vacancy.id]}
                 keyExtractor={(item: Candidate) => item.id.toString()}
@@ -87,7 +91,7 @@ const getRandomColor = () => {
                     <TouchableOpacity onPress={() => handlePress(item)}>
                       <View style={{ flexDirection: 'row',alignItems:'center', justifyContent: 'space-between', backgroundColor: '#fff', margin: 10, padding: 20, borderRadius: 5,  shadowColor: 'rgba(0, 0, 0, 0.1)', shadowOffset: { width: 0, height: 2 },shadowRadius: 6,elevation: 5,shadowOpacity: 1, }}>
                         <View style={{ backgroundColor, borderRadius: 50, width: 40, height: 40, alignItems: 'center', justifyContent: 'center', marginRight: 10 }}>
-                          <Text style={{ color: '#fff', fontSize: 20 }}>{item.name.charAt(0).toUpperCase()}</Text>
+                          <Text style={{ color: '#fff', fontSize: 20, fontWeight: '700' }}>{item.name.charAt(0).toUpperCase()}</Text>
                         </View>
                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
                           <Text style={{ fontSize: 16, fontWeight: '600' }}>{item.name}</Text>
@@ -103,5 +107,19 @@ const getRandomColor = () => {
         ))}
       </Tab.Navigator>
   );
+
 };
+
+
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  message: {
+    fontSize: 20,
+    fontWeight: '700',
+  },
+});
 

@@ -63,7 +63,7 @@ const CandidateProfile = ({ route }: { route: any }) => {
             marginRight: 10,
           }}
         >
-          <Text style={{ color: '#fff', fontSize: 20 }}>
+          <Text style={{ color: '#fff', fontSize: 20,fontWeight: '700' }}>
             {candidate.name.charAt(0).toUpperCase()}
           </Text>
 
@@ -74,6 +74,8 @@ const CandidateProfile = ({ route }: { route: any }) => {
 
         </View>
       </View>
+      <ScrollView>
+
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: 10, alignItems: 'center' }}>
         <TouchableOpacity
           style={{
@@ -130,7 +132,7 @@ const CandidateProfile = ({ route }: { route: any }) => {
           <Text>Call</Text>
         </TouchableOpacity>
       </View>
-      <ScrollView><View style={styles.detailContainer}>
+      <View style={styles.detailContainer}>
   <Text style={styles.detailTitle}>Skills:</Text>
   <Text>{candidate.skills.join(', ')}</Text>
 </View>
@@ -152,7 +154,7 @@ const CandidateProfile = ({ route }: { route: any }) => {
 
 <View style={styles.detailContainer}>
   <Text style={styles.detailTitle}>Certifications:</Text>
-  <Text>{candidate.certifications.join=(', ')}</Text>
+  <Text>{candidate.certifications.join(', ')}</Text>
 </View>
 
 <View style={styles.detailContainer}>
