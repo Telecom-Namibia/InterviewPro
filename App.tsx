@@ -9,6 +9,7 @@ const Stack = createStackNavigator();
 
 import React from 'react'
 import CandidateProfile from './app/Screens/CandidateProfile';
+import Candidates from './app/Screens/Candidates';
 
 export default function App() {
 return(
