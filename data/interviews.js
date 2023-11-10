@@ -1,35 +1,24 @@
 export const interviews = [
     {
-        "id": 1,
-        "application_id": 101,
-        "vacancy_id": 201,
-        "interview_date": "2023-10-15",
-        "interview_location": "123 Main Street, City",
-        "notes": "First round interview with candidate A."
+      "id": 1,
+      "application_id": 101,
+      "vacancy_id": 201,
+      "interview_date": "2023-10-15",
+      "time": "10:00 AM",
+      "interview_location": "123 Main Street, City",
+      "notes": "First round interview with candidate A.",
+      "candidates": [
+        { "id": 1, "name": "Candidate A" },
+        { "id": 2, "name": "Candidate B" }
+      ],
+      "panel_members": [
+        { "id": 1, "name": "Panel Member A" },
+        { "id": 2, "name": "Panel Member B" }
+      ],
+      "questionnaire": [
+        { "id": 1, "question": "Question 1", "answer": "Answer 1" },
+        { "id": 2, "question": "Question 2", "answer": "Answer 2" }
+      ]
     },
-    {
-        "id": 2,
-        "application_id": 102,
-        "vacancy_id": 202,
-        "interview_date": "2023-10-18",
-        "interview_location": "456 Elm Avenue, Town",
-        "notes": "Video interview with candidate B."
-    },
-    // Add more interviews as needed...
-    {
-        "id": 9,
-        "application_id": 109,
-        "vacancy_id": 209,
-        "interview_date": "2023-11-01",
-        "interview_location": "789 Oak Lane, Village",
-        "notes": "In-person interview with candidate I."
-    },
-    {
-        "id": 10,
-        "application_id": 110,
-        "vacancy_id": 210,
-        "interview_date": "2023-11-03",
-        "interview_location": "101 Park Avenue, City",
-        "notes": "Technical interview with candidate J."
-    },
-];
+    // ...
+  ];

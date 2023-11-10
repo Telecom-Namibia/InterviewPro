@@ -1,8 +1,8 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import Header from '../components/Candidates/Header'
-import { CandidatesTabNavigator }  from '../navigations/CandidatesTabNavigator';
-import { vacancies, candidates } from '../../data/vacancies';
+import { CandidatesTabNavigator } from '../navigations/CandidatesTabNavigator';
+import { vacancies } from '../../data/vacancies';
 
 const Candidates = () => {
  
@@ -21,7 +21,7 @@ const Candidates = () => {
   return (
     <View style={{ flex: 1 }}>
       <Header />      
-      <CandidatesTabNavigator vacancies={vacancies} candidates={candidates} />
+      <CandidatesTabNavigator vacancies={vacancies}/>
     </View>
   );
   

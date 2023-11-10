@@ -9,7 +9,7 @@ const Header = () => {
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
         <Text style={{ color: '#fff', fontSize: 21, fontWeight: '600' }}>Shortlisted Candidates</Text>
         <TouchableOpacity >
-          <FontAwesome5 name={true ? "sort-amount-down" : "sort-amount-up"} size={21} color="white" />
+          <FontAwesome5 name={false ? "sort-amount-down" : "sort-amount-up"} size={21} color="white" />
         </TouchableOpacity>
       </View>
     </View>

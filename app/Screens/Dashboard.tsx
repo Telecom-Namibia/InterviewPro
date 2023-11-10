@@ -10,9 +10,9 @@ import DashCalendar from '../components/Home/DashCalendar';
 export default class Dashboard extends Component {
   render() {
     return (
-      <View>
+      <View style={{flex:1}}>
         <Header/>
-        <Cards />
+        {/* <Cards /> */}
         <DashCalendar />
        
       </View>

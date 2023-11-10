@@ -4,15 +4,15 @@ import { View, Text , FlatList, TouchableOpacity, StyleSheet} from "react-native
 import { LogBox } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-
-interface Vacancy {
-  id: string;
-  title: string;
-}
-
 interface Project {
   name: string;
   description: string;
+}
+
+interface Interview {
+  interviewer: string;
+  date: string;
+  notes: string;
 }
 
 interface Candidate {
@@ -29,6 +29,21 @@ interface Candidate {
   certifications: string[];
   projects: Project[];
 }
+
+interface Vacancy {
+  id: number;
+  title: string;
+  department: string;
+  level: string;
+  summary: string;
+  responsibilities: string[];
+  minimum_qualifications: string[];
+  preferred_qualifications: string[];
+  certifications: string[];
+  projects: Project[];
+  interviews: Interview[];
+  candidates: Candidate[];
+}
 interface CandidatesTabsProps {
   vacancies: Vacancy[];
   candidates: Record<string, Candidate[]>;
@@ -43,7 +58,9 @@ interface CandidatesTabNavigatorProps {
 
 const Tab = createMaterialTopTabNavigator();
 
-export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancies, candidates}) => {
+
+
+export const CandidatesTabNavigator: React.FC<CandidatesTabsProps> = ({ vacancies }) => {
   
   const navigation = useNavigation();
 
@@ -83,7 +100,7 @@ const getRandomColor = () => {
             children={() => (
               
               <FlatList
-                data={candidates[vacancy.id]}
+                data={vacancy.candidates}
                 keyExtractor={(item: Candidate) => item.id.toString()}
                 showsVerticalScrollIndicator={false} // Hide vertical scrollbar
       showsHorizontalScrollIndicator={false} 
