@@ -51,13 +51,11 @@ const InterviewDetails = ({ route }: { route: any }) => {
 
     const { interview } = route.params;
     const schedule = (interview: Interview) => {
-        // navigation.navigate('Interview Schedule', { interview.shedule });
-        console.log(interview.schedule);
+        navigation.navigate('Interview Schedule', { interview });
     
       };
     const questionnaire = (interview: Interview) => {
-        // navigation.navigate('Interview Schedule', { interview.shedule });
-        console.log(interview.questionnaire);
+        navigation.navigate('Interview Questionnaire', { interview });
     
       };
 

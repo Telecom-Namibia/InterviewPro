@@ -4,9 +4,8 @@ import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
 const DashCalendar = () => {
   return (
-    <View>
-      <Text>DashCalendar</Text>
-      <Agenda />
+    <View style={{flex: 1, padding: 10, borderRadius: 20, backgroundColor: 'white', margin:10, height: 'auto'}}>
+      <Calendar />
       
     </View>
   )

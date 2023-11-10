@@ -31,16 +31,15 @@
             follow_up_actions: "Send follow-up email",
             interviewer_notes: "Candidate was well-prepared and answered all questions confidently.",
             schedule: [
-              { time: "09:00", name: "Candidate 1" },
-              { time: "09:30", name: "Candidate 2" },
-              { time: "10:00", name: "Candidate 3" },
+              { id: 1, time: "09:00", name: "Candidate 1" },
+              { id: 2, time: "09:30", name: "Candidate 2" },
+              { id: 3, time: "10:00", name: "Candidate 3" },
               // More candidates...
-              { time: "12:30", name: "Candidate 9" },
+              { id: 9, time: "12:30", name: "Candidate 9" },
               // Break from 13:00 to 14:00
-              { time: "14:00", name: "Candidate 10" },
-              { time: "14:30", name: "Candidate 11" },
+              { id: 10, time: "14:00", name: "Candidate 10" },
+              { id: 11, time: "14:30", name: "Candidate 11" },
               // More candidates...
-              { time: "16:30", name: "Candidate 18" },
             ],
             questionnaire: [
               {
@@ -75,16 +74,14 @@
             follow_up_actions: "Discuss with team",
             interviewer_notes: "Candidate showed good technical skills and team fit.",
             schedule: [
-              { time: "09:00", name: "Candidate 1" },
-              { time: "09:30", name: "Candidate 2" },
-              { time: "10:00", name: "Candidate 3" },
+              { id: 1, time: "09:00", name: "Candidate 1" },
+              { id: 2, time: "09:30", name: "Candidate 2" },
+              { id: 3, time: "10:00", name: "Candidate 3" },
               // More candidates...
-              { time: "12:30", name: "Candidate 9" },
+              { id: 9, time: "12:30", name: "Candidate 9" },
               // Break from 13:00 to 14:00
-              { time: "14:00", name: "Candidate 10" },
-              { time: "14:30", name: "Candidate 11" },
-              // More candidates...
-              { time: "16:30", name: "Candidate 18" },
+              { id: 10, time: "14:00", name: "Candidate 10" },
+              { id: 11, time: "14:30", name: "Candidate 11" },
             ],
           },
           // More interviews...

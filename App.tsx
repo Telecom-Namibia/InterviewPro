@@ -11,6 +11,8 @@ import React from 'react'
 import CandidateProfile from './app/Screens/CandidateProfile';
 import Candidates from './app/Screens/Candidates';
 import InterviewDetails from './app/Screens/InterviewDetails';
+import InterviewSchedule from './app/Screens/InterviewSchedule';
+import InterviewQuestionnaire from './app/Screens/InterviewQuestionnaire';
 
 export default function App() {
 return(
@@ -35,6 +37,8 @@ export const Layout = () => {
         <Stack.Screen name="Home" component={TabNavigation} />
         <Stack.Screen name="CandidateProfile" component={CandidateProfile} />
         <Stack.Screen name="Interview Details" component={InterviewDetails} />
+        <Stack.Screen name="Interview Schedule" component={InterviewSchedule} />
+        <Stack.Screen name='Interview Questionnaire' component={InterviewQuestionnaire} />
 
       </Stack.Navigator>
                 

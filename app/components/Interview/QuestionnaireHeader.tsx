@@ -1,0 +1,21 @@
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { format } from 'date-fns'
+
+const QuestionnaireHeader = ({details}) => {
+
+  return (
+    <View style={{ justifyContent: 'center', paddingTop: 54, paddingBottom: 27, paddingHorizontal: 20, backgroundColor: '#1F2F47',}}>
+    <View style={{justifyContent: 'space-between', alignItems: 'center' }}>
+    <Text style={{ color: '#fff', fontSize: 21, fontWeight: '600' }}>{details.title}</Text>
+
+      <Text style={{ color: '#fff', fontSize: 16, fontWeight: '600' }}>{format(new Date(details.dateTime), 'dd MMM yyyy')}</Text>
+     
+    </View>
+  </View>
+  )
+}
+
+export default QuestionnaireHeader
+
+const styles = StyleSheet.create({})
