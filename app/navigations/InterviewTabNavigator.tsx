@@ -26,8 +26,12 @@ interface Interview {
     follow_up_actions: string;
     interviewer_notes: string;
     schedule: Candidate[];
+    questionnaire: Question[];
   }
-
+interface Question{
+    question: string;
+    answers: string[];
+}
 interface Candidate {
   id: number;
   name: string;

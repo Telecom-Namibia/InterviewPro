@@ -42,6 +42,21 @@
               // More candidates...
               { time: "16:30", name: "Candidate 18" },
             ],
+            questionnaire: [
+              {
+                question: "What is your experience with React?",
+                answers: ["None", "Beginner", "Intermediate", "Advanced"],
+              },
+              {
+                question: "What is your experience with Node.js?",
+                answers: ["None", "Beginner", "Intermediate", "Advanced"],
+              },
+              {
+                question: "What is your experience with Redux?",
+                answers: ["None", "Beginner", "Intermediate", "Advanced"],
+              },
+              // Add more questions here
+            ],
           },
           { 
             id: 2, 
@@ -74,6 +89,21 @@
           },
           // More interviews...
         ],
+        questionnaire: [
+          {
+            question: "What is your experience with React?",
+            answers: ["None", "Beginner", "Intermediate", "Advanced"],
+          },
+          {
+            question: "What is your experience with Node.js?",
+            answers: ["None", "Beginner", "Intermediate", "Advanced"],
+          },
+          {
+            question: "What is your experience with Redux?",
+            answers: ["None", "Beginner", "Intermediate", "Advanced"],
+          },
+          // Add more questions here
+        ],
         candidates: [
           { 
             id: 1, 
@@ -85,6 +115,7 @@
             experience: ["Developed a new feature for a social media platform using React", "Built a RESTful API using Node.js"],
             education: ["Bachelor's degree in Computer Science from XYZ University"],
             skills: ["JavaScript", "React", "Node.js", "RESTful API"],
+            languages:['English, Afrikaans'],
             certifications: ["AWS Certified Developer - Associate"],
             projects: [
               { name: "Project C", description: "Developed a new feature for a social media platform that increased user engagement by 10%" },
