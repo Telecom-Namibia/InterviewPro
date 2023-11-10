@@ -4,52 +4,96 @@
         title: "Software Engineer",
         department: "Engineering",
         level: "Mid",
-        summary: "We are looking for a Software Engineer with experience in C++ and Unity.",
-        responsibilities: ["Develop software", "Write tests", "Collaborate with team"],
-        minimum_qualifications: ["Bachelor's degree in Computer Science", "3+ years of C++ experience"],
-        preferred_qualifications: ["Master's degree in Computer Science", "Unity experience"],
-        certifications: ["C++ Certification", "Unity Certification"],
+        summary: "We are looking for a Software Engineer with experience in JavaScript and React.",
+        responsibilities: ["Develop new user-facing features", "Build reusable code and libraries", "Collaborate with cross-functional teams"],
+        minimum_qualifications: ["Bachelor's degree in Computer Science or related field", "3+ years of experience in JavaScript and React"],
+        preferred_qualifications: ["Master's degree in Computer Science or related field", "Experience with Node.js and Redux"],
+        certifications: ["AWS Certified Developer - Associate", "Google Certified Professional - Cloud Developer"],
         projects: [
-          { name: "Project Q", description: "3D game using OpenGL and Unity" },
-          { name: "Project R", description: "C++ library for image processing" },
+          { name: "Project A", description: "Developed a new feature that increased user engagement by 15%" },
+          { name: "Project B", description: "Built a reusable component library that improved development efficiency by 20%" },
         ],
         interviews: [
-          // Add interview data here
+          { 
+            id: 1, 
+            title: "First Round Interview",
+            dateTime: "2023-11-09T19:00:16Z",
+            interviewers: ["John Doe", "Jane Smith"],
+            status: "set",
+            description: "First round interview",
+            location: "Office",
+            location_url: "https://maps.google.com/office",
+            interview_type: "in_person",
+            duration: 30,
+            reschedule_reason: "",
+            reschedule_date: null,
+            rejection_reasons: "",
+            follow_up_actions: "Send follow-up email",
+            interviewer_notes: "Candidate was well-prepared and answered all questions confidently.",
+            schedule: [
+              { time: "09:00", name: "Candidate 1" },
+              { time: "09:30", name: "Candidate 2" },
+              { time: "10:00", name: "Candidate 3" },
+              // More candidates...
+              { time: "12:30", name: "Candidate 9" },
+              // Break from 13:00 to 14:00
+              { time: "14:00", name: "Candidate 10" },
+              { time: "14:30", name: "Candidate 11" },
+              // More candidates...
+              { time: "16:30", name: "Candidate 18" },
+            ],
+          },
+          { 
+            id: 2, 
+            title: "Second Round Interview",
+            dateTime: "2023-11-16T19:00:16Z",
+            interviewers: ["John Doe"],
+            status: "set",
+            description: "Second round interview",
+            location: "Office",
+            location_url: "https://maps.google.com/office",
+            interview_type: "in_person",
+            duration: 60,
+            reschedule_reason: "",
+            reschedule_date: null,
+            rejection_reasons: "",
+            follow_up_actions: "Discuss with team",
+            interviewer_notes: "Candidate showed good technical skills and team fit.",
+            schedule: [
+              { time: "09:00", name: "Candidate 1" },
+              { time: "09:30", name: "Candidate 2" },
+              { time: "10:00", name: "Candidate 3" },
+              // More candidates...
+              { time: "12:30", name: "Candidate 9" },
+              // Break from 13:00 to 14:00
+              { time: "14:00", name: "Candidate 10" },
+              { time: "14:30", name: "Candidate 11" },
+              // More candidates...
+              { time: "16:30", name: "Candidate 18" },
+            ],
+          },
+          // More interviews...
         ],
         candidates: [
           { 
-            id: 1,
-            name: "David Smith", 
-            grade: 8.5,
-            email: "davidsmith@example.com", 
-            phone: "555-555-5563",
-            address: "123 Main St, City, State, Zip",
-            skills: ["UX Design", "User Research", "Design Thinking"],
-            experience: "5 years",
-            education: "Bachelor's degree in Design",
-            languages: ["English", "Spanish"],
-            certifications: ["Certified User Experience Professional (CUXP)"],
+            id: 1, 
+            name: "Alice Johnson",
+            email: "alice.johnson@example.com",
+            phone: "+1 (555) 123-4567",
+            grade: 20,
+            summary: "I am a software engineer with experience in React and Node.js.",
+            experience: ["Developed a new feature for a social media platform using React", "Built a RESTful API using Node.js"],
+            education: ["Bachelor's degree in Computer Science from XYZ University"],
+            skills: ["JavaScript", "React", "Node.js", "RESTful API"],
+            certifications: ["AWS Certified Developer - Associate"],
             projects: [
-              { name: "Project A", description: "Designed a mobile app that received 4.5 stars on the App Store" },
-              // Add more project data here
-            ]
-          },
-          { 
-            id: 2,
-            name: "Emily Johnson", 
-            grade: 9.0,
-            email: "emilyjohnson@example.com", 
-            phone: "555-555-5564",
-            address: "456 Main St, City, State, Zip",
-            skills: ["UX Design", "User Research", "Design Thinking"],
-            experience: "6 years",
-            education: "Master's degree in Design",
-            languages: ["English", "French"],
-            certifications: ["Certified Design Thinking Professional (CDTP)"],
-            projects: [
-              { name: "Project B", description: "Conducted user research that led to a 20% increase in user engagement" },
-              // Add more project data here
-            ]
+              { name: "Project C", description: "Developed a new feature for a social media platform that increased user engagement by 10%" },
+              { name: "Project D", description: "Built a RESTful API that improved data retrieval efficiency by 20%" },
+            ],
+            interviews: [
+              { id: 3, interviewer: "Bob Lee", date: "2022-01-15", notes: "Candidate has strong experience in React" },
+              { id: 4, interviewer: "Sarah Johnson", date: "2022-01-20", notes: "Candidate demonstrated excellent communication skills" },
+            ],
           },
           // Add more candidate data here
         ]
@@ -68,10 +112,7 @@
           { name: "Project S", description: "Launched a new product that increased revenue by 20%" },
           { name: "Project T", description: "Led the development of a mobile app that received 4.5 stars on the App Store" },
         ],
-        interviews: [
-          { interviewer: "John Doe", date: "2022-01-15", notes: "Candidate has strong experience in product development" },
-          { interviewer: "Jane Smith", date: "2022-01-20", notes: "Candidate demonstrated excellent communication skills" },
-        ],
+      
         candidates: [
           
         ]
@@ -90,10 +131,7 @@
           { name: "Project U", description: "Launched a successful email marketing campaign that increased sales by 15%" },
           { name: "Project V", description: "Managed a social media campaign that increased engagement by 25%" },
         ],
-        interviews: [
-          { interviewer: "Sarah Johnson", date: "2022-02-01", notes: "Candidate has strong experience in digital marketing" },
-          { interviewer: "Mark Lee", date: "2022-02-05", notes: "Candidate demonstrated excellent analytical skills" },
-        ],
+        
         candidates: [
           
           // Add more candidate data here
@@ -113,10 +151,7 @@
           { name: "Project W", description: "Developed a machine learning model that improved accuracy by 10%" },
           { name: "Project X", description: "Analyzed customer data to identify key trends and insights" },
         ],
-        interviews: [
-          { interviewer: "David Kim", date: "2022-02-10", notes: "Candidate has strong experience in machine learning" },
-          { interviewer: "Emily Chen", date: "2022-02-15", notes: "Candidate demonstrated excellent problem-solving skills" },
-        ],
+        
         candidates: [
           
           // Add more candidate data here
@@ -136,12 +171,8 @@
           { name: "Project Y", description: "Designed a mobile app that received 4.5 stars on the App Store" },
           { name: "Project Z", description: "Conducted user research that led to a 20% increase in user engagement" },
         ],
-        interviews: [
-          { interviewer: "Michael Brown", date: "2022-02-20", notes: "Candidate has strong experience in user research" },
-          { interviewer: "Jessica Lee", date: "2022-02-25", notes: "Candidate demonstrated excellent design skills" },
-        ],
+        
         candidates: [
-          
         ]
       },
     ];

@@ -6,18 +6,6 @@ import { vacancies } from '../../data/vacancies';
 
 const Candidates = () => {
  
-  
-  interface CandidatesTabsProps {
-    vacancies: {
-      id: string;
-      title: string;
-    }[];
-    candidates: Record<string, {
-      id: string;
-      name: string;
-    }[]>;
-  }
-
   return (
     <View style={{ flex: 1 }}>
       <Header />      

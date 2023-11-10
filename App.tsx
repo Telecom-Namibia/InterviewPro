@@ -10,6 +10,7 @@ const Stack = createStackNavigator();
 import React from 'react'
 import CandidateProfile from './app/Screens/CandidateProfile';
 import Candidates from './app/Screens/Candidates';
+import InterviewDetails from './app/Screens/InterviewDetails';
 
 export default function App() {
 return(
@@ -33,6 +34,7 @@ export const Layout = () => {
             <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={TabNavigation} />
         <Stack.Screen name="CandidateProfile" component={CandidateProfile} />
+        <Stack.Screen name="Interview Details" component={InterviewDetails} />
 
       </Stack.Navigator>
                 
