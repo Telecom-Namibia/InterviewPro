@@ -1,27 +1,19 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import Header from '../components/Candidates/Header'
-import { CandidatesTabNavigator }  from '../navigations/CandidatesTabNavigator';
-import { vacancies, candidates } from '../../data/vacancies';
+import { CandidatesTabNavigator } from '../navigations/CandidatesTabNavigator';
+import { vacancies } from '../../data/vacancies';
 
 const Candidates = () => {
  
-  
-  interface CandidatesTabsProps {
-    vacancies: {
-      id: string;
-      title: string;
-    }[];
-    candidates: Record<string, {
-      id: string;
-      name: string;
-    }[]>;
-  }
-
   return (
     <View style={{ flex: 1 }}>
       <Header />      
+<<<<<<< HEAD
       <CandidatesTabNavigator vacancies={vacancies} candidates={candidates} />
+=======
+      <CandidatesTabNavigator vacancies={vacancies}/>
+>>>>>>> origin/main
     </View>
   );
   

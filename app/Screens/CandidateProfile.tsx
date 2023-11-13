@@ -91,7 +91,11 @@ const CandidateProfile = ({ route }: { route: any }) => {
             }}
           >
             <Icon name="envelope" size={20} color="#1F2F47" />
+<<<<<<< HEAD
             <Text>E-mail</Text>
+=======
+            <Text style={{padding:5}}>E-mail</Text>
+>>>>>>> origin/main
           </TouchableOpacity>
           <TouchableOpacity
             style={{
@@ -109,7 +113,11 @@ const CandidateProfile = ({ route }: { route: any }) => {
             }}
           >
             <Icon name="comment" size={20} color="#1F2F47" />
+<<<<<<< HEAD
             <Text>Message</Text>
+=======
+            <Text style={{padding:5}}>Message</Text>
+>>>>>>> origin/main
           </TouchableOpacity>
           <TouchableOpacity
             style={{
@@ -127,7 +135,11 @@ const CandidateProfile = ({ route }: { route: any }) => {
             }}
           >
             <Icon name="phone" size={20} color="#1F2F47" />
+<<<<<<< HEAD
             <Text>Call</Text>
+=======
+            <Text style={{padding:5}}>Call</Text>
+>>>>>>> origin/main
           </TouchableOpacity>
         </View>
         <View style={styles.detailContainer}>
