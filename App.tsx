@@ -1,56 +1,43 @@
 import { AuthProvider, useAuth } from './app/contexts/AuthContext';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './app/navigations/TabNavigation';
 import { StatusBar } from 'expo-status-bar';
 import { createStackNavigator } from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
-
-
-import React from 'react'
+import Vacancies from './app/Screens/Vacancies';
+import AddVacancyForm from './app/components/Vacancies/AddVacancyForm';
 import CandidateProfile from './app/Screens/CandidateProfile';
-import Candidates from './app/Screens/Candidates';
 import InterviewDetails from './app/Screens/InterviewDetails';
 import InterviewSchedule from './app/Screens/InterviewSchedule';
 import InterviewQuestionnaire from './app/Screens/InterviewQuestionnaire';
 
-export default function App() {
-return(
-
-    <AuthProvider>
-        <Layout></Layout>
-        
-    </AuthProvider>
-
-);
-}
+const Stack = createStackNavigator();
 
 export const Layout = () => {
-    const { authState, onLogout} = useAuth();
+  const { authState, onLogout } = useAuth();
 
-    return (
-        <NavigationContainer >
-            <StatusBar style='light' />
-
-            {/* {authState?.authenticated ? ( */}
-            <Stack.Navigator screenOptions={{headerShown: false}}>
+  return (
+    <NavigationContainer>
+      <StatusBar style="light" />
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={TabNavigation} />
         <Stack.Screen name="CandidateProfile" component={CandidateProfile} />
         <Stack.Screen name="Interview Details" component={InterviewDetails} />
         <Stack.Screen name="Interview Schedule" component={InterviewSchedule} />
-        <Stack.Screen name='Interview Questionnaire' component={InterviewQuestionnaire} />
-
+        <Stack.Screen
+          name="Interview Questionnaire"
+          component={InterviewQuestionnaire}
+        />
+        <Stack.Screen name="Vacancies" component={Vacancies} />
+        <Stack.Screen name="AddVacancyForm" component={AddVacancyForm} />
       </Stack.Navigator>
-                
-
-
-            {/* ) : (
-                <Login/>
-            )
-        } */}
-        </NavigationContainer>
-
-    
-    );
-
+    </NavigationContainer>
+  );
 };
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <Layout />
+    </AuthProvider>
+  );
+}
