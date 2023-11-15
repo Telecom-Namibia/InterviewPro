@@ -1,10 +1,19 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native'; // Import the useNavigation hook
 import VacancyHeader from '../components/Vacancies/VacancyHeader';
-import VacancyCard from '../components/Vacancies/VacancyCard'; // Assuming you have a VacancyCard component
+import VacancyCard from '../components/Vacancies/VacancyCard';
 import { dummy_jobs } from '../../data/dummy_jobs';
+import VacancyDetailScreen from './VacancyDetailScreen';
 
 const Vacancies = () => {
+  const navigation = useNavigation();
+
+  const handleVacancyPress = (vacancy) => {
+    // Navigate to the VacancyDetailScreen, passing the selected vacancy as a parameter
+    navigation.navigate('VacancyDetail', { vacancy });
+  };
+
   return (
     <View style={{ flex: 1 }}>
       <View>
@@ -13,7 +22,12 @@ const Vacancies = () => {
 
       <ScrollView contentContainerStyle={styles.card}>
         {dummy_jobs.map((vacancy) => (
-          <VacancyCard key={vacancy.vacancy_Id} vacancy={vacancy} />
+          <TouchableOpacity
+            key={vacancy.vacancy_Id}
+            onPress={() => handleVacancyPress(vacancy)}
+          >
+            <VacancyCard vacancy={vacancy} />
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </View>

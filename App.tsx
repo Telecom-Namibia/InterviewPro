@@ -1,3 +1,4 @@
+import React from 'react';
 import { AuthProvider, useAuth } from './app/contexts/AuthContext';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './app/navigations/TabNavigation';
@@ -9,6 +10,7 @@ import CandidateProfile from './app/Screens/CandidateProfile';
 import InterviewDetails from './app/Screens/InterviewDetails';
 import InterviewSchedule from './app/Screens/InterviewSchedule';
 import InterviewQuestionnaire from './app/Screens/InterviewQuestionnaire';
+import VacancyDetailScreen from './app/Screens/VacancyDetailScreen'; // Import the new screen
 
 const Stack = createStackNavigator();
 
@@ -29,6 +31,7 @@ export const Layout = () => {
         />
         <Stack.Screen name="Vacancies" component={Vacancies} />
         <Stack.Screen name="AddVacancyForm" component={AddVacancyForm} />
+        <Stack.Screen name="VacancyDetail" component={VacancyDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
