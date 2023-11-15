@@ -11,7 +11,7 @@ const Vacancies = () => {
         <VacancyHeader />
       </View>
 
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView contentContainerStyle={styles.card}>
         {dummy_jobs.map((vacancy) => (
           <VacancyCard key={vacancy.vacancy_Id} vacancy={vacancy} />
         ))}
@@ -21,9 +21,15 @@ const Vacancies = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    marginTop: 50,
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    marginHorizontal: 10,
+    padding: 10,
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    shadowOpacity: 1,
   },
 });
 

@@ -39,7 +39,7 @@ const AddVacancyForm: React.FC<AddVacancyFormProps> = () => {
       </View>
 
       {/* Form */}
-      <View style={styles.formContainer}>
+      <View style={styles.card}>
         <TextInput
           style={styles.input}
           placeholder="Vacancy Name"
@@ -64,11 +64,6 @@ const AddVacancyForm: React.FC<AddVacancyFormProps> = () => {
 };
 
 const styles = StyleSheet.create({
-  formContainer: {
-    marginBottom: 20,
-    marginTop: 20,
-    padding: 20,
-  },
   input: {
     borderWidth: 1,
     borderColor: '#ccc',
@@ -85,6 +80,18 @@ const styles = StyleSheet.create({
   addButtonText: {
     color: 'white',
     fontWeight: 'bold',
+  },
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    marginHorizontal: 10,
+    padding: 10,
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    elevation: 5,
+    shadowOpacity: 1,
+    paddingTop: 20,
   },
 });
 
