@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-} from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import VacancyHeader from '../components/Vacancies/VacancyHeader';
 
 interface VacancyData {
@@ -41,66 +34,15 @@ const initialVacanciesData: VacancyData[] = [
 ];
 
 const Vacancies: React.FC = () => {
-  const [vacanciesData, setVacanciesData] =
-    useState<VacancyData[]>(initialVacanciesData);
-  const [newVacancy, setNewVacancy] = useState<VacancyData>({
-    vacancy_Id: 0,
-    vacancy_name: '',
-    vacancy_description: '',
-    vacancy_closing_date: '',
-  });
-
-  const handleAddVacancy = () => {
-    setVacanciesData([
-      ...vacanciesData,
-      { ...newVacancy, vacancy_Id: vacanciesData.length + 1 },
-    ]);
-    setNewVacancy({
-      vacancy_Id: 0,
-      vacancy_name: '',
-      vacancy_description: '',
-      vacancy_closing_date: '',
-    });
-  };
-
   return (
     <View>
       <View>
         <VacancyHeader />
       </View>
       <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.formContainer}>
-          <TextInput
-            style={styles.input}
-            placeholder="Vacancy Name"
-            value={newVacancy.vacancy_name}
-            onChangeText={(text) =>
-              setNewVacancy({ ...newVacancy, vacancy_name: text })
-            }
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Vacancy Description"
-            value={newVacancy.vacancy_description}
-            onChangeText={(text) =>
-              setNewVacancy({ ...newVacancy, vacancy_description: text })
-            }
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Closing Date"
-            value={newVacancy.vacancy_closing_date}
-            onChangeText={(text) =>
-              setNewVacancy({ ...newVacancy, vacancy_closing_date: text })
-            }
-          />
-          <TouchableOpacity style={styles.addButton} onPress={handleAddVacancy}>
-            <Text style={styles.addButtonText}>Add Vacancy</Text>
-          </TouchableOpacity>
-        </View>
-        {vacanciesData.map((vacancy) => (
-          <View key={vacancy.vacancy_Id} style={styles.vacancyContainer}>
-            <Text style={styles.vacancyId}>ID: {vacancy.vacancy_Id}</Text>
+        {initialVacanciesData.map((vacancy) => (
+          <View key={vacancy.vacancy_Id} style={styles.cardContainer}>
+            <Text style={styles.vacancyId}>Vacancy: {vacancy.vacancy_Id}</Text>
             <Text style={styles.vacancyName}>{vacancy.vacancy_name}</Text>
             <Text style={styles.vacancyDescription}>
               {vacancy.vacancy_description}
@@ -121,36 +63,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 20,
     paddingTop: 20,
+    paddingBottom: 100,
   },
-  headerContainer: {
-    marginBottom: 20,
-  },
-  formContainer: {
-    marginBottom: 20,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 5,
-  },
-  addButton: {
-    backgroundColor: 'blue',
-    padding: 15,
-    alignItems: 'center',
-    borderRadius: 5,
-  },
-  addButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-  },
-  vacancyContainer: {
+  cardContainer: {
     marginBottom: 20,
     borderWidth: 1,
     borderColor: '#ccc',
-    padding: 15,
     borderRadius: 5,
+    padding: 15,
+    backgroundColor: 'lightgrey',
   },
   vacancyId: {
     fontSize: 18,
