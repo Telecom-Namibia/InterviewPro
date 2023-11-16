@@ -36,7 +36,7 @@ const Vacancies = () => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'white',
+    backgroundColor: 'lightgrey',
     borderRadius: 10,
     marginHorizontal: 10,
     padding: 10,
