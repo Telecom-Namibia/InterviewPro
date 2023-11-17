@@ -11,7 +11,7 @@ const InterviewHeader = () => {
         paddingTop: 54,
         paddingBottom: 27,
         paddingHorizontal: 20,
-        backgroundColor: '#1F2F47',
+        backgroundColor: '#00558F',
       }}
     >
       <View

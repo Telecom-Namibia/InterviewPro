@@ -1,10 +1,9 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
-const VacancyDetailScreen = () => {
+const VacancyDetailsHeader = () => {
   const navigation = useNavigation();
 
   return (
@@ -14,7 +13,7 @@ const VacancyDetailScreen = () => {
         paddingTop: 54,
         paddingBottom: 27,
         paddingHorizontal: 20,
-        backgroundColor: '#1F2F47',
+        backgroundColor: '#00558F',
       }}
     >
       <View
@@ -39,6 +38,6 @@ const VacancyDetailScreen = () => {
   );
 };
 
-export default VacancyDetailScreen;
+export default VacancyDetailsHeader;
 
 const styles = StyleSheet.create({});
