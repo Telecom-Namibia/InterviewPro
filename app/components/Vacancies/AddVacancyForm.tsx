@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   addButton: {
-    backgroundColor: 'blue',
+    backgroundColor: 'orange',
     padding: 15,
     alignItems: 'center',
     borderRadius: 5,

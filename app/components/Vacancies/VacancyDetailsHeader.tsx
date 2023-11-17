@@ -31,7 +31,7 @@ const VacancyDetailsHeader = () => {
             alignItems: 'center',
           }}
         >
-          Current Vacancies
+          Vacancy Details
         </Text>
       </View>
     </View>

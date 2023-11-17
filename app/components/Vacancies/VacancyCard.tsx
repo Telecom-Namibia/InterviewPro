@@ -2,16 +2,21 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 const VacancyCard = ({ vacancy }) => {
+  const { position, vacancyClosingDate, keyDetails } = vacancy;
+
   return (
     <View style={styles.cardContainer}>
-      <Text style={styles.vacancyId}>Vacancy: {vacancy.vacancy_Id}</Text>
-      <Text style={styles.vacancyName}>{vacancy.vacancy_name}</Text>
-      <Text style={styles.vacancyDescription}>
-        {vacancy.vacancy_description}
-      </Text>
-      <Text style={styles.vacancyClosingDate}>
-        Closing Date: {vacancy.vacancy_closing_date}
-      </Text>
+      <Text style={styles.vacancyId}>Position: {position}</Text>
+      {keyDetails && (
+        <View style={styles.keyDetailsContainer}>
+          <Text style={styles.keyDetailsText}>
+            Requirements: {keyDetails.requirements}
+          </Text>
+          <Text style={styles.vacancyClosingDate}>
+            Closing Date: {vacancyClosingDate}
+          </Text>
+        </View>
+      )}
     </View>
   );
 };
@@ -28,17 +33,24 @@ const styles = StyleSheet.create({
   vacancyId: {
     fontWeight: 'bold',
   },
-  vacancyName: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginTop: 5,
-  },
   vacancyDescription: {
     marginTop: 5,
   },
   vacancyClosingDate: {
-    marginTop: 5,
-    color: 'gray',
+    fontWeight: 'bold',
+    marginTop: 10,
+    marginBottom: 5,
+    color: 'red',
+  },
+  keyDetailsContainer: {
+    marginTop: 10,
+  },
+  keyDetailsTitle: {
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
+  keyDetailsText: {
+    fontWeight: 'bold',
   },
 });
 

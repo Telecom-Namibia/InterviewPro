@@ -1,7 +1,6 @@
-// VacancyHeader.tsx
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, FontAwesome } from '@expo/vector-icons'; // Import FontAwesome
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
@@ -10,6 +9,12 @@ const VacancyHeader = () => {
 
   const handleAddVacancyPress = () => {
     navigation.navigate('AddVacancyForm');
+  };
+
+  const handleSearchPress = () => {
+    // Implement your search functionality here
+    // For example, you can navigate to a search screen
+    // navigation.navigate('SearchScreen');
   };
 
   return (
@@ -29,6 +34,14 @@ const VacancyHeader = () => {
           alignItems: 'center',
         }}
       >
+        <TouchableOpacity onPress={handleSearchPress}>
+          <FontAwesome
+            name="search"
+            size={24}
+            color="#fff"
+            style={{ marginRight: 15 }}
+          />
+        </TouchableOpacity>
         <Text style={{ color: '#fff', fontSize: 21, fontWeight: '600' }}>
           Current Vacancies
         </Text>

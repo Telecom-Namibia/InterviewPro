@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Import the useNavigation hook
+import { useNavigation } from '@react-navigation/native';
 import VacancyHeader from '../components/Vacancies/VacancyHeader';
 import VacancyCard from '../components/Vacancies/VacancyCard';
 import { dummy_jobs } from '../../data/dummy_jobs';
@@ -10,7 +10,6 @@ const Vacancies = () => {
   const navigation = useNavigation();
 
   const handleVacancyPress = (vacancy) => {
-    // Navigate to the VacancyDetailScreen, passing the selected vacancy as a parameter
     navigation.navigate('VacancyDetail', { vacancy });
   };
 
@@ -36,7 +35,7 @@ const Vacancies = () => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'lightgrey',
+    backgroundColor: 'orange',
     borderRadius: 10,
     marginHorizontal: 10,
     padding: 10,
