@@ -38,29 +38,30 @@ const VacancyDetailScreen = ({ route }) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 19,
   },
   position: {
-    fontSize: 20,
+    fontSize: 19,
     fontWeight: 'bold',
+    marginBottom: 9,
   },
   vacancyDescription: {
-    fontSize: 16,
+    fontSize: 15,
     color: 'gray',
-    marginTop: 10,
+    marginTop: 9,
   },
   closingDate: {
-    marginTop: 10,
+    marginTop: 9,
   },
   keyDetailsContainer: {
-    marginTop: 10,
+    marginTop: 9,
   },
   keyDetailsTitle: {
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 13,
   },
   keyDetailsText: {
-    marginTop: 5,
+    marginTop: 4,
   },
 });
 
