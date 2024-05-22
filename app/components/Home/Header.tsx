@@ -21,10 +21,10 @@ const Header = () => {
     >
       <View style={{ alignItems: 'flex-start' }}>
         <Text style={{ color: '#fff', fontSize: 21, fontWeight: '600' }}>
-          Hi, Admin
+          Hello Welcome 
         </Text>
         <Text style={{ color: 'orange', fontSize: 11, fontWeight: '600' }}>
-          Welcome to InterviewPro
+          Telecom Training Center InterviewPro
         </Text>
       </View>
     </View>
